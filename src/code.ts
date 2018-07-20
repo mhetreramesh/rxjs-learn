@@ -1,5 +1,6 @@
-import { Observable } from "rxjs";
+import { Observable, fromEvent } from "rxjs"
 
+/*
 var observable = Observable.create((observer:any) => {
     try {
     observer.next('Hey guys!')
@@ -20,15 +21,20 @@ var observer = observable.subscribe(
     () => addItem('Completed')
 )
 
-var observer2 = observable.subscribe(
-    (x:any) => addItem(x)
-)
+setTimeout(() => {
+    var observer2 = observable.subscribe(
+        (x:any) => addItem('Subscriber 2: '+x)
+    )
+}, 1000)
+*/
 
-observer.add(observer2)
+var observable = fromEvent(document, 'mousemove')
 
 setTimeout(() => {
-    observer.unsubscribe()
-}, 6001)
+    var subscription = observable.subscribe(
+        (x:any) => addItem(x)
+    )
+}, 2000)
 
 function addItem(val:any) {
     var node = document.createElement("li");
