@@ -1,0 +1,32 @@
+{
+  "name": "rxjs-learn",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "rxjs": "^6.2.2",
+    "ts-loader": "^4.4.2",
+    "typescript": "^2.9.2",
+    "webpack": "^4.16.1",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test",
+    "start": "webpack-dev-server --mode development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mhetreramesh/rxjs-learn.git"
+  },
+  "keywords": [
+    "rxjs"
+  ],
+  "author": "Ramesh M",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mhetreramesh/rxjs-learn/issues"
+  },
+  "homepage": "https://github.com/mhetreramesh/rxjs-learn#readme"
+}
