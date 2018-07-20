@@ -22,3 +22,4 @@
 2. filter()
 3. reduce()
 4. take()
+5. so on....
