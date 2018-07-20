@@ -1,6 +1,8 @@
 import { Observable, fromEvent, Subject } from "rxjs"
 
 /*
+
+// Basic Observers
 var observable = Observable.create((observer:any) => {
     try {
     observer.next('Hey guys!')
@@ -26,8 +28,8 @@ setTimeout(() => {
         (x:any) => addItem('Subscriber 2: '+x)
     )
 }, 1000)
-*/
 
+// fromEvent Observers
 var observable = fromEvent(document, 'mousemove')
 
 setTimeout(() => {
@@ -36,9 +38,31 @@ setTimeout(() => {
     )
 }, 2000)
 
+*/
+
+var subject = new Subject()
+
+subject.subscribe(
+    data => addItem('Observer 1: '+data),
+    err => addItem(err),
+    () => addItem('Observer 1 Completed')
+)
+
+subject.next('The first thing has been sent')
+
+var observer2 = subject.subscribe(
+    data => addItem('Observer 2 : '+data)
+)
+subject.next('The 2nd thing has been sent')
+subject.next('The third thing has been sent')
+
+observer2.unsubscribe();
+
+subject.next('A final thing has been sent')
+
 function addItem(val:any) {
-    var node = document.createElement("li");
-    var textnode = document.createTextNode(val);
-    node.appendChild(textnode);
-    document.getElementById("output").appendChild(node);
+    var node = document.createElement("li")
+    var textnode = document.createTextNode(val)
+    node.appendChild(textnode)
+    document.getElementById("output").appendChild(node)
 }
