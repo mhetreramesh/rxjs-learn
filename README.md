@@ -11,6 +11,14 @@
 
 [Reference](https://www.youtube.com/watch?v=PhggNGsSQyg)
 
-## Usecases
+## Why?
 
-1. 
+1. Decoupled code
+2. Observable Operators
+
+## Operations on simple streams
+
+1. map()
+2. filter()
+3. reduce()
+4. take()
